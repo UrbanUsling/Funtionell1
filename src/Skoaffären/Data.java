@@ -118,7 +118,6 @@ public class Data {
             stmt3.setInt(2,skorId);
             stmt3.setInt(3,kundId);
             stmt3.executeQuery();
-            System.out.println("Hit");
         }
     }
     }

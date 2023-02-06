@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Beställ {
-    private static Skor skor1;
-    private static Kund kund1;
+    private Skor skor1;
+    private Kund kund1;
     public static List<Orderdata> ordrar = new ArrayList<>();
     private static List<Ordernycklar> nycklars = new ArrayList<>();
     private static Ordernycklar nyckel1;
@@ -22,13 +22,6 @@ public class Beställ {
         return beställningar;
     }
 
-    public static Skor getSkor1() {
-        return skor1;
-    }
-
-    public static Kund getKund1() {
-        return kund1;
-    }
     public void inloggning() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Skriv in namn");
