@@ -36,7 +36,6 @@ public class Main {
                 password);
              Statement stmt = con.createStatement();
              Statement stmt2 = con.createStatement();
-             CallableStatement stmt3 = con.prepareCall("CALL AddToChart(?, ?, ?)");
              ResultSet rs = stmt.executeQuery("SELECT id, namn, lösenord FROM Kunder");
              ResultSet rs2 = stmt2.executeQuery("SELECT id, namn, färg, märke, pris, storlek, antal FROM Skor");
         ) {
@@ -105,25 +104,6 @@ public class Main {
             String namn = scan2.nextLine();
             skorna.stream().filter(f-> f.getNamn().equals(namn)).forEach(f-> skor1=f);
         }
-       /* PreparedStatement stmt2 = con.prepareStatement("SELECT Id FROM Kunder where namn = ?, lösenord = ?");
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Skriv in namn");
-        String namn = scan.nextLine();
-        System.out.println("Skriv in lösenord");
-        String lösen = scan.nextLine();
-        stmt2.setString(1, namn);
-        stmt2.setString(2, lösen);
-        Inlogg I1 = s -> s.();
-
-        ResultSet rs = stmt.executeQuery("SELECT namn, lösenord FROM Kunder");
-        Consumer n= t-> System.out.println(t);
-        while (rs.next()) {
-            int x = rs.getInt("id");
-            int s = rs.getInt("orderNr");
-            namnen.add(s);
-            n.accept(s);
-        }
-        namnen.stream().filter(z->z>115).forEach(z-> System.out.print(z + " "));*/
 
 
                 public static void main (String[]args) throws SQLException {
