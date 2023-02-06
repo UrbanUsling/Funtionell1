@@ -1,3 +1,5 @@
+package Skoaffären;
+
 public class Kund {
     private int id;
     private String namn;

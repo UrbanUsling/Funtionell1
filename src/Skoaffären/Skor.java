@@ -1,3 +1,5 @@
+package Skoaffären;
+
 public class Skor {
     private int id;
     private String namn;
