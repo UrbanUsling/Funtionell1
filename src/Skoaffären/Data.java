@@ -8,13 +8,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class Data {
+public class Data implements StoredProceduren{
         private static String connection;
         private static String username;
         private static String password;
 
+    public static String getConnection() {
+        return connection;
+    }
 
-        public void getLogin() {
+    public static String getUsername() {
+        return username;
+    }
+
+    public static String getPassword() {
+        return password;
+    }
+
+    public void getLogin() {
             Properties p = new Properties();
             try  {
                 p.load(new FileInputStream("src/Skoaffären/settings.properties"));
@@ -53,8 +64,8 @@ public class Data {
         return skorna;
     }
 
-
-    public void connectToAndQueryDatabase() throws SQLException {
+    @Override
+    public void connectToAndQueryDatabase() {
         try (Connection con = DriverManager.getConnection(connection,
                 username,
                 password);
@@ -106,7 +117,7 @@ public class Data {
             throw new RuntimeException(e);
         }
     }
-    public static void connectToSP(int id, int skorId, int kundId) throws SQLException {
+    /*public static void connectToSP(int id, int skorId, int kundId) throws SQLException {
 
         try (Connection con = DriverManager.getConnection(connection,
                 username,
@@ -119,6 +130,6 @@ public class Data {
             stmt3.setInt(3,kundId);
             stmt3.executeQuery();
         }
-    }
+    }*/
     }
 
