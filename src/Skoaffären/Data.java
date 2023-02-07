@@ -8,22 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class Data implements StoredProceduren{
+public class Data{
         private static String connection;
         private static String username;
         private static String password;
 
-    public static String getConnection() {
-        return connection;
-    }
-
-    public static String getUsername() {
-        return username;
-    }
-
-    public static String getPassword() {
-        return password;
-    }
 
     public void getLogin() {
             Properties p = new Properties();
@@ -64,7 +53,7 @@ public class Data implements StoredProceduren{
         return skorna;
     }
 
-    @Override
+
     public void connectToAndQueryDatabase() {
         try (Connection con = DriverManager.getConnection(connection,
                 username,
@@ -117,7 +106,7 @@ public class Data implements StoredProceduren{
             throw new RuntimeException(e);
         }
     }
-    /*public static void connectToSP(int id, int skorId, int kundId) throws SQLException {
+    public static void connectToSP(int id, int skorId, int kundId) throws SQLException {
 
         try (Connection con = DriverManager.getConnection(connection,
                 username,
@@ -130,6 +119,6 @@ public class Data implements StoredProceduren{
             stmt3.setInt(3,kundId);
             stmt3.executeQuery();
         }
-    }*/
+    }
     }
 

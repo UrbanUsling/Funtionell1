@@ -52,7 +52,7 @@ public class Beställ {
         Returen r = (a,b) -> a == b;
         Data.getOrderdatas().stream().filter(f->r.compare(f.getKundId(), (KundId))).forEach(f-> ordrar.add(f));
         if(ordrar.isEmpty()){
-            StoredProceduren.connectToSP(-1, skor1.getId(), kund1.getId());
+            Data.connectToSP(-1, skor1.getId(), kund1.getId());
             System.out.println("En ny beställning med ett nytt ordernummer skapades");
             System.exit(0);
         }
@@ -67,11 +67,11 @@ public class Beställ {
             }
         }
         if(beställ1==null){
-            StoredProceduren.connectToSP(getNycklars().get(0).getId(), skor1.getId(), kund1.getId());
+            Data.connectToSP(getNycklars().get(0).getId(), skor1.getId(), kund1.getId());
             System.out.print("En ny produkt läggs till i existerande order");
             System.exit(0);
         }else{
-            StoredProceduren.connectToSP(beställ1.getId(), skor1.getId(), kund1.getId());
+            Data.connectToSP(beställ1.getId(), skor1.getId(), kund1.getId());
             System.out.print("Ännu ett exemplar av denna sko las till i din beställning");
             System.exit(0);
         }
